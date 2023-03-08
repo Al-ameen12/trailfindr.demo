@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    position: relative;
+    /* padding-bottom: 10em; */
+}
+
+/*** styling the header ***/
+header{
+    display: flex;
+    justify-content: space-between;
+    background: rgb(41, 38, 38);
+    padding: 20px 50px;
+}
+.img-logo{
+    max-width: 150px;
+}
+.nav-img{
+    width: 40px;
+}
+ul{
+    list-style: none;
+}
+.navigations{
+    display: flex;
+    gap: 2em;
+}
+
+/*** styling the main ***/
+main{
+    height: 300px;
+    background:url('main-bg.jpg') no-repeat ;
+    background-size: cover;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    /*** centering ***/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content{
+    margin-top: -30px;
+}
+.main-content h1{
+    margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: 2.5em;
+    text-align: center;
+}
+.search-content{
+    text-align: center;
+}
+.search-content input{
+    width: 500px;
+    padding: 15px 40px;
+    font-size: larger;
+    border-radius: 15px;
+    margin-right: 20px;
+    border:  2px solid green;
+    background: url('searchicon.png') no-repeat;
+    background-color: white;
+    background-position: 3.5% 50%;
+}
+input:focus {
+    font-style: normal;
+    border: none;
+}
+[placeholder]{
+    font-style: italic;
+}
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 10px;
+    color: white;
+    background: green;
+    border: none;
+    transition: all 0s ;
+}
+button:hover{
+    border: 5px solid white;
+    cursor: pointer;
+    background-image: linear-gradient(-5deg, rgb(107, 219, 122) 1%, green 90%);
+    color: rgba(253, 253, 253, 0.938);
+}
+
+/*** NOTE ****/
+.note{
+    padding: 20px 25px;
+    background: red;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black, 0px 0px 5px black;
+    animation: notice 5s  linear infinite;
+} 
+
+@keyframes notice {
+    from{transform: scale(1, 1);}
+    to{transform: scale(0.8, 0.8);}
+}
+.note  {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*** styling the footer ***/
+footer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    /* border: 2px solid blue; */
+    /** positioning the footer **/
+    position: absolute;
+    bottom: 0;
+}
+footer::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.func{
+    width: 300px;
+    position: relative;
+    /* border: 2px solid blue; */
+    padding: 10px;
+    text-align: center;
+}
+
+.func img{
+    width: 130px;
+}
+
+
+/*** RESPONSIVENESS ***/
+@media screen and (max-width: 820px) {
+    
+    .nav-img{
+        width: 20px;
+        
+    }
+    .navigations{
+        align-self: center;
+    }
+    main{
+        height: 500px;
+        /*setting the background */
+        background: url('sm-main-bg.jpg');
+    }
+
+    .main-content{
+        width: 60%;
+    }
+    .main-content h1{
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .main-content input {
+        display: block;
+        margin: 0 auto 40px auto;
+        width: 100%;
+    }
+
+    .note{
+       top: 55%;
+    }
+    footer{
+        flex-direction: column;
+        overflow: hidden;
+        position:static;
+        padding: 10px;
+        /* border: 2px solid red; */
+    }
+
+
+    .func{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5em;
+        font-size: x-large;
+    }
+
+    .locate-img{
+        margin-right: 30px;
+    }
+}
